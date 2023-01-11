@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <h1 style="text-align: center">Welcome to homepage</h1>
+    <br>
+
+    <!-- Basic Example -->
+    <h2>Basic Example: </h2>
+    <hr>
+    <p>Your name: <span th:text="${name}"></span></p>
+    <p>Your name in uppercase: <span th:text="${#strings.toUpperCase(name)}"></span></p>
+    <p>Your name in lowercase: <span th:text="${#strings.toLowerCase(name)}"></span></p>
+    <p><span th:text="'Length of the name: ' + ${#strings.length(name)}"></span></p>
+    <p><span th:text="'Your age: ' + ${age}"></span></p>
+    <p><span th:text="'Current date: ' + ${date}"></span></p>
+    <br>
+    <br>
+
+    <!-- Local Variable -->
+    <h2>Example of local variable:</h2>
+    <hr>
+    <div th:with="age = 10, address = 'Mithapukur, Rangpur', name = ${name}, a = 10, b = 5">
+        <p><span th:text="'Your name: ' + ${name}"></span></p>
+        <p><span th:text="'Your age: ' + ${age}"></span></p>
+        <p><span th:text="'Your address: ' + ${address}"></span></p>
+        <p><span th:text="'Sum of a and b: ' + ${a+b}"></span></p>
+    </div>
+</body>
+</html>
