@@ -12,6 +12,13 @@ import java.util.stream.Collectors;
 @Controller
 public class MyController {
 
+    @GetMapping("/")
+    public String home(Model model) {
+        model.addAttribute("title", "Home");
+
+        return "index";
+    }
+
     @GetMapping("/basic")
     public String basicExample(Model model) {
         model.addAttribute("title", "Basic Example");
@@ -42,6 +49,21 @@ public class MyController {
         model.addAttribute("students", students);
 
         return "iteration";
+    }
+
+    @GetMapping("/condition")
+    public String conditionExample(Model model) {
+        model.addAttribute("title", "Condition Example");
+
+        String name = "Rony";
+        model.addAttribute("name", name);
+        model.addAttribute("gender", "F");
+        model.addAttribute("isActive", true);
+
+        List<Integer> list = List.of(1,2,3,4);
+        model.addAttribute("list", list);
+
+        return "condition";
     }
 
 }

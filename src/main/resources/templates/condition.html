@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}"></title>
+</head>
+<body style="margin: 50px 50px; padding: 0px 50px">
+    <h1 style="text-align: center">Conditional example of Thymeleaf</h1>
+    <br>
+
+    <!--If, If-Unless statement -->
+    <h2>If, If-Unless and Elvis statement</h2>
+    <hr>
+    <p th:text="'User name: '+${name}"></p>
+    <p th:if="${gender} == 'M'">Gender: Male</p>        <!-- Executes when condition is true -->
+    <p th:unless="${gender} == 'M'">Gender: Female</p>  <!-- Executes when condition is false -->
+
+    <!-- Elvis statement -->
+    <p>User status: <span th:style="${isActive} ? 'color: green; font-weight: bold' : ''" th:text="${isActive} ? 'Active' : 'Inactive'"></span></p>
+    <br>
+    <br>
+
+    <!-- Switch-Case statement -->
+    <h2>Switch-Case statement</h2>
+    <hr>
+    <div th:switch="${#lists.size(list)}">
+        <p th:case="'0'">List has 0 element.</p>
+        <p th:case="'1'">List has 1 element.</p>
+        <p th:case="*">List has more than one element.</p>
+    </div>
+</body>
+</html>
