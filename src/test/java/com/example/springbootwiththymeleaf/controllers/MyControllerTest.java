@@ -61,4 +61,13 @@ public class MyControllerTest {
                 .andExpect(view().name("iteration"));
     }
 
+    //To check if fragments page is shown or not
+    @Test
+    public void shouldReturnFragmentsPage() throws Exception {
+        this.mockMvc.perform(get("/fragment"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("fragments"));
+    }
+
 }

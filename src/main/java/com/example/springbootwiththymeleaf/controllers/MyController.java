@@ -66,4 +66,11 @@ public class MyController {
         return "condition";
     }
 
+    @GetMapping("/fragment")
+    public String fragmentsExample(Model model) {
+        model.addAttribute("title", "Fragments Example");
+
+        return "fragments";
+    }
+
 }
