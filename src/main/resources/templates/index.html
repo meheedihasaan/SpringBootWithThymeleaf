@@ -8,12 +8,17 @@
     <title th:text="${title}"></title>
 </head>
 <body style="margin: 50px 50px; padding: 0px 50px">
-<h1 style="text-align: center">Spring Boot with Thymeleaf Example</h1>
-<br>
+    <h1 style="text-align: center">Spring Boot with Thymeleaf Example</h1>
+    <br>
+    <br>
     <a style="margin: 10px" th:href="@{/basic}">Basic Example</a>
     <a style="margin: 10px" th:href="@{/condition}">Condition Example</a>
     <a style="margin: 10px" th:href="@{/iteration}">Iteration Example</a>
     <a style="margin: 10px" th:href="@{/fragment}">Fragment Example</a>
     <a style="margin: 10px" th:href="@{/dynamicValue}">Passing Dynamic Value with Fragments</a>
+    <hr>
+    <h4 style="margin: 10px">Inheritence</h4>
+    <a style="margin: 10px" th:href="@{/about}">About</a>
+    <a style="margin: 10px" th:href="@{/services}">Services</a>
 </body>
 </html>

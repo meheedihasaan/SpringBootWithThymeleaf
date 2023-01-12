@@ -85,7 +85,16 @@ public class MyControllerTest {
         this.mockMvc.perform(get("/about"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(view().name("about"));
+                .andExpect(view().name("inheritence/about"));
+    }
+
+    //To check if services page is shown or not
+    @Test
+    public void shouldReturnServicesPage() throws Exception {
+        this.mockMvc.perform(get("/services"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("inheritence/services"));
     }
 
 }

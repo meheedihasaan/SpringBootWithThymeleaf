@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 @Controller
 public class MyController {
 
+    //To view index page
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "Home");
@@ -19,6 +20,7 @@ public class MyController {
         return "index";
     }
 
+    //To view basic example
     @GetMapping("/basic")
     public String basicExample(Model model) {
         model.addAttribute("title", "Basic Example");
@@ -32,6 +34,7 @@ public class MyController {
         return "basic";
     }
 
+    //To view iteration example
     @GetMapping("/iteration")
     public String iterationExample(Model model) {
         model.addAttribute("title", "Iteration Example");
@@ -51,6 +54,7 @@ public class MyController {
         return "iteration";
     }
 
+    //To view conditional example
     @GetMapping("/condition")
     public String conditionExample(Model model) {
         model.addAttribute("title", "Condition Example");
@@ -66,6 +70,7 @@ public class MyController {
         return "condition";
     }
 
+    //To view fragments example
     @GetMapping("/fragment")
     public String fragmentsExample(Model model) {
         model.addAttribute("title", "Fragments Example");
@@ -73,6 +78,7 @@ public class MyController {
         return "fragments";
     }
 
+    //To view dynamic value passing to fragment example
     @GetMapping("/dynamicValue")
     public String dynamicValueWithFragments(Model model) {
         model.addAttribute("title", "Dynamic Value Passing");
@@ -87,11 +93,20 @@ public class MyController {
         return "dynamicValueWithFragments";
     }
 
+    //To view about page
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("title", "About");
 
-        return "/inheritence/about";
+        return "inheritence/about";
+    }
+
+    //To view services page
+    @GetMapping("/services")
+    public String services(Model model){
+        model.addAttribute("title", "Services");
+
+        return "inheritence/services";
     }
 
 }
