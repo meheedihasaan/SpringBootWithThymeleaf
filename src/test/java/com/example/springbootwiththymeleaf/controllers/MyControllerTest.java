@@ -70,4 +70,22 @@ public class MyControllerTest {
                 .andExpect(view().name("fragments"));
     }
 
+    //To check if dynamicValueWithFragments page is shown or not
+    @Test
+    public void shouldReturnDynamicValueWithFragmentsPage() throws Exception {
+        this.mockMvc.perform(get("/dynamicValue"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("dynamicValueWithFragments"));
+    }
+
+    //To check if about page is shown or not
+    @Test
+    public void shouldReturnAboutPage() throws Exception {
+        this.mockMvc.perform(get("/about"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("about"));
+    }
+
 }

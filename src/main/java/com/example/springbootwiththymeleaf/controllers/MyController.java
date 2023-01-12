@@ -73,4 +73,25 @@ public class MyController {
         return "fragments";
     }
 
+    @GetMapping("/dynamicValue")
+    public String dynamicValueWithFragments(Model model) {
+        model.addAttribute("title", "Dynamic Value Passing");
+
+        model.addAttribute("name", "Fariya Richie");
+        model.addAttribute("age", 18);
+        model.addAttribute("address", "Shathibari, Mithapukur, Rangpur");
+
+        Student student = new Student("Rakibul Hasan Mahin", 19, "Dhaka");
+        model.addAttribute("student", student);
+
+        return "dynamicValueWithFragments";
+    }
+
+    @GetMapping("/about")
+    public String about(Model model) {
+        model.addAttribute("title", "About");
+
+        return "/inheritence/about";
+    }
+
 }

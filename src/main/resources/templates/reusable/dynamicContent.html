@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+    <section id="fragmentTag1" th:fragment="replaceFragment(name, age, address)">
+        <div>
+            <h3 th:text="'Name: '+${name}"></h3>
+            <h4 th:text="'Age: '+${age}"></h4>
+            <h4 th:text="'Address: '+${address}"></h4>
+        </div>
+    </section>
+
+    <section id="fragmentTag2" th:fragment="insertFragment(name, age, address)">
+        <div>
+            <h3 th:text="'Name: '+${name}"></h3>
+            <h4 th:text="'Age: '+${age}"></h4>
+            <h4 th:text="'Address: '+${address}"></h4>
+        </div>
+    </section>
+
+    <section id="fragmentTag3" th:fragment="includeFragment(student)">
+        <div>
+            <h3 th:text="'Name: '+${student.getName()}"></h3>
+            <h4 th:text="'Age: '+${student.getAge()}"></h4>
+            <h4 th:text="'Address: '+${student.getAddress()}"></h4>
+        </div>
+    </section>
+</body>
+</html>
